@@ -208,3 +208,49 @@ WebSockets help send notifications instantly without repeated API requests.
 Redis is fast but needs extra memory.
 
 Read replicas improve reading performance but increase infrastructure cost.
+
+
+# Stage 5
+
+## Problems In Existing Design
+
+The current notification sending process has some issues:
+
+1. Notifications are sent one by one
+2. Processing becomes slow for large number of students
+3. If one request fails, it may affect the whole process
+
+---
+
+## Better Architecture
+
+A queue-based system can improve performance and reliability.
+
+Tools like RabbitMQ or Kafka can be used.
+
+Background workers will process notifications asynchronously.
+
+---
+
+## Retry Mechanism
+
+If notification delivery fails, the system can retry automatically after some time.
+
+This improves reliability.
+
+---
+
+## Example Logic
+
+for (const student of students) {
+   queue.publish(student);
+}
+
+---
+
+## Advantages
+
+1. Faster processing
+2. Better scalability
+3. Reliable delivery
+4. Supports retry mechanism
