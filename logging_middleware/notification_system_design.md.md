@@ -119,3 +119,41 @@ This improves search speed.
 2. Redis caching
 3. Database sharding
 4. Proper indexing
+
+# Stage 3
+
+## Query Optimization
+
+The old query is slow because it fetches unnecessary data and does not use proper indexing.
+
+Using SELECT * is not good for performance when table size becomes large.
+
+---
+
+## Optimized Query
+
+SELECT id, message, createdAt
+FROM notifications
+WHERE studentID = 1042
+AND isRead = false
+ORDER BY createdAt DESC
+LIMIT 20;
+
+---
+
+## Best Index
+
+(studentID, isRead, createdAt)
+
+This composite index helps improve filtering and sorting speed.
+
+---
+
+## Why Indexing Every Column Is Bad
+
+Too many indexes increase:
+1. Storage usage
+2. Insert time
+3. Update time
+
+So indexing should be done carefully.
