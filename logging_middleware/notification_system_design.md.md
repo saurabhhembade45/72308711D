@@ -287,3 +287,28 @@ Event = 1
 
 ---
 
+# Stage 7
+
+## Frontend Features
+
+The frontend application should include:
+
+1. Responsive UI
+2. Notification filters
+3. Mark as read option
+4. Priority inbox
+5. Pagination support
+
+---
+
+## Technologies Used
+
+1. Next.js
+2. Tailwind CSS
+3. Axios
+
+---
+
+## API Endpoint
+
+http://4.224.186.213/evaluation-service/notifications
