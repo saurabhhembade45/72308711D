@@ -157,3 +157,54 @@ Too many indexes increase:
 3. Update time
 
 So indexing should be done carefully.
+
+
+# Stage 4
+
+## Database Overload Solutions
+
+When too many students use the system together, database performance can become slow.
+
+To improve performance, the following solutions can be used.
+
+---
+
+## Redis Caching
+
+Frequently accessed notifications can be stored in Redis cache to reduce database load.
+
+---
+
+## Pagination
+
+Instead of loading all notifications together, data can be loaded page by page.
+
+This reduces server load and improves response time.
+
+---
+
+## Lazy Loading
+
+Notifications can load only when required by the user.
+
+---
+
+## Read Replicas
+
+Read queries can be sent to replica databases while write queries go to the primary database.
+
+This improves scalability.
+
+---
+
+## WebSockets
+
+WebSockets help send notifications instantly without repeated API requests.
+
+---
+
+## Tradeoffs
+
+Redis is fast but needs extra memory.
+
+Read replicas improve reading performance but increase infrastructure cost.
