@@ -254,3 +254,36 @@ for (const student of students) {
 2. Better scalability
 3. Reliable delivery
 4. Supports retry mechanism
+
+# Stage 6
+
+## Priority Inbox Logic
+
+Notifications can be sorted based on priority.
+
+Priority Order:
+1. Placement
+2. Result
+3. Event
+
+Placement notifications are most important, so they appear first.
+
+---
+
+## Steps Used
+
+1. Fetch notifications from API
+2. Assign priority value
+3. Sort notifications
+4. Display top 10 notifications
+
+---
+
+## Example Priority Values
+
+Placement = 3
+Result = 2
+Event = 1
+
+---
+
